@@ -5,7 +5,14 @@ let nombres = []
 function agregarAmigo(){
     let unNombre = document.getElementById('amigo').value;
     alert(unNombre);
-    limpiarInput()
+    verificarNombre(unNombre);
+    limpiarInput();
+}
+
+function verificarNombre(nombre){
+    if (nombre === '') {
+        alert('Por favor, inserte un nombre.')
+    }
 }
 
 function limpiarInput(){
