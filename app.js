@@ -4,18 +4,32 @@ let nombres = []
 
 function agregarAmigo(){
     let unNombre = document.getElementById('amigo').value;
-    alert(unNombre);
     verificarNombre(unNombre);
+    mostrarLista();
     limpiarInput();
 }
 
-function verificarNombre(nombre){
-    if (nombre === '') {
+function verificarNombre(unNombre){
+    if (unNombre === '') {
         alert('Por favor, inserte un nombre.')
-    }
+    } else
+        agregarALista(unNombre);
 }
 
 function limpiarInput(){
-    let valor = document.querySelector('#amigo');
-    valor.value = '';
+    document.getElementById('amigo').value = '';
+}
+
+function agregarALista(unNombre){
+    nombres.push(unNombre);
+    console.log('Se agregó a: ', unNombre);
+}
+
+function mostrarLista(){
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = ""; 
+
+    for (let i = 0; i < nombres.length; i++) {
+        lista.innerHTML += "<li>" + nombres[i] + "</li>";
+    }
 }
