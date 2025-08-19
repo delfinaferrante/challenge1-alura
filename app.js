@@ -33,3 +33,14 @@ function mostrarLista(){
         lista.innerHTML += "<li>" + nombres[i] + "</li>";
     }
 }
+
+function sortearAmigo(){
+    let indiceAleatorio = Math.floor(Math.random() * nombres.length);
+    let nombreElegido = nombres[indiceAleatorio];
+    mostrarGanador(nombreElegido);
+}
+
+function mostrarGanador(nombreElegido){
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = 'El amigo secreto sorteado es: ' + nombreElegido; 
+}
