@@ -35,6 +35,11 @@ function mostrarLista(){
 }
 
 function sortearAmigo(){
+    if (nombres.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+    }
+
     let indiceAleatorio = Math.floor(Math.random() * nombres.length);
     let nombreElegido = nombres[indiceAleatorio];
     mostrarGanador(nombreElegido);
